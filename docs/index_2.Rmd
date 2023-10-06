@@ -3601,13 +3601,13 @@ df |>
 
 Viele Gänsefüßchen mussten wir verwenden. Dies ist vermeidbar, wenn wir `str_glue()` aus dem __glue__ Paket benutzen. Alles innerhalb `{}` wird bewertet, als wäre es außerhalb der Anführungszeichen.
 
-```{r}
+```{r eval = FALSE}
 df |> mutate(greeting = str_glue("Hi {name}!"))
 ```
 
-`str_glue()` konvertiert *Missing Values* zu `"NA"`. Jetzt ist es inkonsistent zu `str_c()`. Wenn du `{` oder `}` einfühgen willst, nutze `{{` bzw. `}}`. 
+`str_glue()` konvertiert *Missing Values* zu `"NA"`. Jetzt ist es inkonsistent zu `str_c()`. Wenn du `{` oder `}` einfügen willst, nutze `{{` bzw. `}}`. 
 
-```{r}
+```{r eval = FALSE}
 df |> mutate(greeting = str_glue("{{Hi {name}!}}"))
 ```
 
